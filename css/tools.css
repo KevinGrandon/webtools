@@ -23,3 +23,12 @@
 .add-vesting-row {
 	float:right;
 }
+
+
+/* Generic Controls */
+#dates {
+	display:block;
+	max-height:600px;
+	width:100%;
+	overflow-y:auto;
+}

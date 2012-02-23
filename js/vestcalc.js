@@ -1,5 +1,21 @@
 !function() {
 
+	var currency = function(num) {
+		num = num.toString().replace(/\$|\,/g,'');
+		if(isNaN(num))
+		num = "0";
+		sign = (num == (num = Math.abs(num)));
+		num = Math.floor(num*100+0.50000000001);
+		cents = num%100;
+		num = Math.floor(num/100).toString();
+		if(cents<10)
+		cents = "0" + cents;
+		for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+		num = num.substring(0,num.length-(4*i+3))+','+
+		num.substring(num.length-(4*i+3));
+		return (((sign)?'':'-') + '$' + num + '.' + cents);
+	}
+
 	var calculateOptions = function() {
 		var grants = []
 			, grantedSum = 0
@@ -54,10 +70,10 @@
 			, optionTotal = 0
 			, priceTotal = 0
 			, months = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"]
-			, tableContent = '<table class="table table-bordered table-striped">' + 
-				'<tr>' +
-					'<th>date</th><th># of options</th><th>options to date</th><th>price each</th><th>price of new options</th><th>price to date</th>'
-				'</tr>';
+			, tableContent = '<table class="table table-bordered table-striped table-condensed">' + 
+				'<thead><tr>' +
+					'<th>date</th><th># of options</th><th>options to date</th><th>price each</th><th>price of new options</th><th>price to date</th>' +
+				'</tr></thead><tbody>';
 
 		dates.setContent("");
 
@@ -72,12 +88,12 @@
 				"</td>" +
 				"<td>" + grantDates[i].count + "</td>" + 
 				"<td>" + optionTotal + "</td>" + 
-				"<td>" + grantDates[i].priceEach + "</td>" + 
-				"<td>" + grantDates[i].totalPrice + "</td>" + 
-				"<td>" + (Math.floor(priceTotal*100)/100) + "</td>" +
+				"<td>" + currency(grantDates[i].priceEach) + "</td>" + 
+				"<td>" + currency(grantDates[i].totalPrice) + "</td>" + 
+				"<td>" + currency(Math.floor(priceTotal*100)/100) + "</td>" +
 			"</tr>";
 		}
-		tableContent += '</table>';
+		tableContent += '</tbody></table>';
 
 		dates.setContent(tableContent);
 	}
