@@ -64,8 +64,68 @@
 
 			<div data-tool-content="mortgage_calculator" style="display:none;">
 				<h1>Mortgage Calculator</h1>
+				<form class="form-horizontal mortgage-calc">
+					<fieldset>
+						<legend>Financing Information</legend>
+						<div class="control-group">
+							<label class="control-label" for="m_sale_price">Sale Price of Home</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="m_sale_price" value="$500,000.00">
+								<p class="help-block"></p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="m_down_percent">Percentage Down</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="m_down_percent" value="10">
+								<p class="help-block"></p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="m_mortgage_interest_percent">Mortgage Interest Rate</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="m_mortgage_interest_percent" value="6.5">
+								<p class="help-block"></p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="m_year_term">Length of Mortgage (years)</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="m_year_term" value="30">
+								<p class="help-block"></p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="m_assessed_value">Assessed Home Value</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="m_assessed_value" value="30">
+								<p class="help-block">The assessed value is used to compute property taxes. On average, properties are assessed at about 85% of their selling price. If you know the actual assessed value for this property, enter it here. If not, <strong>leave zero and we'll use 85% of the sale price.</strong></p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="m_property_tax_rate">Property Tax Rate<br>(dollars per $1000)</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="m_property_tax_rate" value="14">
+								<p class="help-block">Property tax rates vary between states and towns. The US average is about $13.80 for every $1000 of the assessed home value.</strong></p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="m_condo_fee">Condo/Monthly Fee(s)</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="m_condo_fee" value="0">
+							</div>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">Calculate</button>
+						</div>
+					</fieldset>
+				</form>
+				<br><br>
+				<div id="mortgagedata"></div>
 			</div>
-		</div>		
+			<script type="text/javascript" src="js/mortgage.js"></script>
+
+		</div>
 	</div>
 </div>
 </body>
