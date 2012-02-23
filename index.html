@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Tools</title>
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="css/tools.css">
+	<script type="text/javascript" src="js/nwtui.js"></script>
+	<script type="text/javascript" src="js/tools.js"></script>
+</head>
+<body>
+<div class="row">
+	<div class="span3">
+		<div class="well" style="padding: 8px 0;">
+			<ul class="nav nav-list">
+				<li class="nav-header">Financial Tools</li>
+				<li class="active"><a href="#" data-tool="equity_calculator">Equity Vesting Calculator</a></li>
+				<li><a href="#" data-tool="mortgage_calculator">Mortgage Calculator</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="span10">
+		<div id="main">
+
+			<div data-tool-content="equity_calculator">
+				<h1>Startup Equity Vesting Calculator</h1>
+				<p>This calculates how many shares you have vested, and the approximate total cost.</p>
+				<form class="well vesting-forms">
+					<div class="row headers">
+						<span class="span2">Total Shares</span>
+						<span class="span2">Share Price</span>
+						<span class="span2">Grant Date</span>
+						<span class="span2">Cliff Date</span>
+						<span class="span2">Cliff Shares</span>
+						<span class="span2">Addtl. Months</span>
+					</div>
+					<div class="vesting-rows">
+						<div class="form-template" style="display:none;">
+							<input type="text" class="shares input-small" value="100000">
+							<input type="text" class="price input-small" value="0.50">
+							<input type="text" class="grantdate input-small" value="01/20/10">
+							<input type="text" class="cliffdate input-small" value="01/20/11">
+							<input type="text" class="cliffshares input-small" value="25000">
+							<input type="text" class="addtlmonths input-small" value="36">
+							<a class="btn btn-danger">
+								<i class="icon-remove-sign icon-white"></i>
+								Remove
+							</a>
+							<hr>
+						</div>
+					</div>
+					<a class="btn btn-info add-vesting-row">
+						<i class="icon-plus-sign icon-white"></i>
+						Add Grant
+					</a>
+				</form>
+				<a class="btn btn-primary vesting-calculate">
+					<i class="icon-play icon-white"></i>
+					Calculate
+				</a>
+				<br><br>
+				<div id="dates"></div>
+			</div>
+			<script type="text/javascript" src="js/vestcalc.js"></script>
+
+			<div data-tool-content="mortgage_calculator" style="display:none;">
+				<h1>Mortgage Calculator</h1>
+			</div>
+		</div>		
+	</div>
+</div>
+</body>
+</html>

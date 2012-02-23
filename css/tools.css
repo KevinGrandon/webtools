@@ -1,0 +1,25 @@
+/* Equity Calculator */
+
+.vesting-forms .headers.row {
+	margin-left:0;
+	margin-bottom:6px;
+}
+
+.vesting-forms .headers span.span2 {
+	margin:0;
+	width:104px;
+	font-weight:bold;
+}
+
+.vesting-forms {
+	padding-bottom:30px;
+}
+
+.add-vesting-row {
+	margin-top:-10px;
+}
+
+.vesting-forms .btn-danger, 
+.add-vesting-row {
+	float:right;
+}
