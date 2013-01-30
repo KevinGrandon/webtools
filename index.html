@@ -15,6 +15,8 @@
 				<li class="nav-header">Financial Tools</li>
 				<li class="active"><a href="#" data-tool="equity_calculator">Equity Vesting Calculator</a></li>
 				<li><a href="#" data-tool="mortgage_calculator">Mortgage Calculator</a></li>
+				<li class="nav-header">Math Tools</li>
+				<li><a href="#" data-tool="quick_average">Quick Average</a></li>
 			</ul>
 		</div>
 	</div>
@@ -124,6 +126,27 @@
 				<div id="mortgagedata"></div>
 			</div>
 			<script type="text/javascript" src="js/mortgage.js"></script>
+
+			<div data-tool-content="quick_average" style="display:none;">
+				<h1>Mortgage Calculator</h1>
+				<p>Quickly calculate an average by typing numbers into the textarea below. Add a new line at the end to calculate the averages of all numbers above.</p>
+				<div class="row">
+					<div class="span6 calcaverage">
+						<textarea></textarea>
+						<div class="well">
+							Average: <strong>0</strong>
+						</div>
+					</div>
+					<div class="span6 calcaverage">
+						<textarea></textarea>
+						<div class="well">
+							Average: <strong>0</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript" src="js/quick_average.js"></script>
+
 
 		</div>
 	</div>
